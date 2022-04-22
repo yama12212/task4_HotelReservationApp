@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
+  def top
+  end
 
   # GET /rooms or /rooms.json
   def index
