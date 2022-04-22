@@ -1,0 +1,2 @@
+class RoomsKeywordsSearch < ApplicationRecord
+end
