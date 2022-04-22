@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      task:  #attributes内のモデル名以下のカラム名は、必ずモデル名から半角スペースを空けて記載する。でないと正常に読み込まれず、日本語化にならない。
+       id: ID
+       email: メールアドレス
+       encrypted_password: パスワード暗号化
+       reset_password_sent_at: パスワードリセット日時
+       remember_created_at: ログイン時間
+       create_at: 登録日時
+       update_at: 更新日時
