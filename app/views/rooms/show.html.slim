@@ -1,0 +1,29 @@
+p#notice
+  = notice
+p
+  strong
+    | Name:
+  = @room.name
+p
+  strong
+    | Introduce:
+  = @room.introduce
+p
+  strong
+    | Single rate:
+  = @room.single_rate
+p
+  strong
+    | Address:
+  = @room.address
+p
+  strong
+    | Image name:
+  = @room.image_name
+p
+  strong
+    | User:
+  = @room.user_id
+= link_to 'Edit', edit_room_path(@room)
+|  | 
+= link_to 'Back', rooms_path
