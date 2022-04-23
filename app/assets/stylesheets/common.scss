@@ -20,7 +20,59 @@ ul,li{
   height: 100vh;
 }
 
+//headerレイアウト
+header{
+  background-color: #000;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header_login>:first-of-type{
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(70, 150, 255);
+  padding: 8px 12px;
+  text-align: center;
+  margin-top: 15px;
+  transition: filter 0.5s;
+}
+
+.header_login>:last-of-type{
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(136, 136, 136);
+  margin-left: 20px;
+  padding: 8px 12px;
+  transition: filter 0.5s;
+}
+
+.header_login>:first-of-type:hover{
+  filter: brightness(120%);
+}
+
+.header_login>:last-of-type:hover{
+  filter: brightness(120%);
+}
+
+
+
+
 main{
   flex-grow: 1;
 }
 
+
+
+//footerレイアウト
+footer{
+  background-color: #000;
+  height: 180px;
+  color: #fff;
+  text-align: center;
+  line-height: 180px;
+  font-size: 14px;
+}
