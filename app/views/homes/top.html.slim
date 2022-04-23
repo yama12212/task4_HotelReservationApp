@@ -1,2 +1,23 @@
-h1 Homes#top
-p Find me in app/views/homes/top.html.slim
+.top
+  .first_view 
+    .first_view_search 
+      p Potepan Shareでまだ体験したことのない旅をしよう
+      p エリア検索
+      =form_with url: searches_area_path,method: "get",class: "first_view_search_area" do |f|
+        =f.search_field :keyword,:placeholder => "どこに行こう？"
+        br
+        =f.submit("探す")
+    
+  .recommendation_area
+    p おすすめのエリア
+    .recommendation_area_search
+      .recommendation_area_search_images
+        =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg",class: "recommendation_area_search_image"),"/searches/area?button=&keyword=東京"
+        =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg",class: "recommendation_area_search_image"),"/searches/area?button=&keyword=大阪"
+        =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg",class: "recommendation_area_search_image"),"/searches/area?button=&keyword=京都"
+        =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg",class: "recommendation_area_search_image"),"/searches/area?button=&keyword=札幌"
+      .recommendation_area_search_area_name 
+        p 東京
+        p 大阪
+        p 京都
+        p 札幌

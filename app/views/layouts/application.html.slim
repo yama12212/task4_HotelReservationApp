@@ -17,12 +17,12 @@ body
       .header_search  
         =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", class: "header_logo"), "/"
         .header_search_box
-          =form_with url: searches_keyword_path,method: "get",class: "header_search_area" do |f|
+          =form_with url: searches_area_path,method: "get",class: "header_search_area" do |f|
             =f.button :type=>"submit" do 
               i class="fas fa-map-marker-alt"
             =f.search_field :keyword,:placeholder => "エリア名で検索"
         
-          =form_with url: searches_area_path,method: "get",class: "header_search_keyword" do |f|
+          =form_with url: searches_keyword_path,method: "get",class: "header_search_keyword" do |f|
             =f.button :type=>"submit" do 
               i class="fas fa-search"
             =f.search_field :address,:placeholder => "キーワードで検索"
@@ -31,10 +31,8 @@ body
         =link_to "ログイン", new_user_session_path
         =link_to "新規登録", new_user_registration_path
 
-        
-
-
     main
       = yield
+      
     footer
       p © 2020 POTEPAN.INC.
