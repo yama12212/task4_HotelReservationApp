@@ -1,4 +1,4 @@
-.sign_up
+.sign_form_content
   h4
     | 新しいアカウントを作成
 
@@ -17,6 +17,7 @@
       .field
         p 必須
         = f.password_field :password_confirmation, autocomplete: "new-password",:placeholder => "パスワード（確認用）"
+      =f.hidden_field :image_name,value: "default_user_image.jpeg"
       .actions
         = f.submit "新しいアカウントを作成"
     = render "devise/shared/links"
