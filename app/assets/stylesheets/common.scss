@@ -167,12 +167,13 @@ main{
 
 .recommendation_area{
   width: 100%;
-  padding: 40px 200px;
+  padding: 40px 0px;
 }
 
 .recommendation_area>p{
   font-weight: bold;
   font-size: 24px;
+  margin-left: 200px;
   margin-bottom: 12px;
 }
 
@@ -180,6 +181,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 200px;
 }
 
 .recommendation_area_search_image{
@@ -201,7 +203,7 @@ main{
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 0 110px;
+  padding: 0 115px;
   font-size: 24px;
   font-weight: bold;
 } 
