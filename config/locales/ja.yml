@@ -1,5 +1,24 @@
 ja:
   activerecord:
+    models:
+     rooms: ルーム情報
+     keywords: キーワード情報
+     reserves: 予約情報
+    attributes:
+     rooms:
+      id: ルームID
+      name: ルーム名
+      introduce: ルーム紹介
+      single_rate: 1日あたりの単価
+      address: 住所
+      image_name: ルーム写真
+     keywords:
+      keyword: キーワード
+     reserves:
+      start_date: チェックイン
+      end_date: チェックアウト
+      number_of_people: 宿泊人数
+    
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
