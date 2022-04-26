@@ -3,8 +3,8 @@
     .first_view_search 
       p Potepan Shareでまだ体験したことのない旅をしよう
       p エリア検索
-      =form_with url: searches_area_rooms_path,method: "get",class: "first_view_search_area" do |f|
-        =f.search_field :keyword,:placeholder => "どこに行こう？"
+      =search_form_for @area, url: searches_area_rooms_path,method: "get",class: "first_view_search_area" do |f|
+        =f.search_field :name_or_address_cont,:placeholder => "どこに行こう？"
         br
         =f.submit("探す")
  
