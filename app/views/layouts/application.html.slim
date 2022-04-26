@@ -19,16 +19,16 @@ body
       .header_search  
         =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", class: "header_logo"), "/"
         .header_search_box
-          =form_with url: searches_area_rooms_path,method: "get",class: "header_search_form" do |f|
+          =search_form_for @area, url: searches_area_rooms_path,class: "header_search_form" do |f|
             =f.button :type=>"submit" do 
               i class="fas fa-map-marker-alt"
-            =f.search_field :keyword_cont,:placeholder => "エリア名で検索"
+            =f.search_field :name_or_address_cont,:placeholder => "エリア名で検索"
         
-          =form_with url: searches_keyword_rooms_path,method: "get",class: "header_search_form" do |f|
+          =form_with url: searches_keyword_rooms_path, method: "get", class: "header_search_form" do |f|
             =f.button :type=>"submit" do 
               i class="fas fa-search"
-            =f.search_field :address_cont,:placeholder => "キーワードで検索"
-
+            =f.search_field :keyword_cont,:placeholder => "キーワードで検索"
+          
       -if user_signed_in?
         .header_user_info
           p =current_user.name 
