@@ -43,7 +43,7 @@ header{
   align-items: center;
 }
 
-.header_search_area>button{
+.header_search_form>button{
   background-color: #fff;
   padding: 7.5px;
   font-size: 14px;
@@ -51,32 +51,17 @@ header{
   border-bottom-left-radius: 5px;
 }
 
-.header_search_area>input{
+.header_search_form>input{
   height: 36px;
   width: 200px;
   font-size: 14px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  padding-left: 5px;
 }
 
-.header_search_keyword{
+.header_search_form:last-of-type{
   margin-left: 10px;
-}
-
-.header_search_keyword>button{
-  background-color: #fff;
-  padding: 7.5px;
-  font-size: 14px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.header_search_keyword>input{
-  height: 36px;
-  width: 200px;
-  font-size: 14px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
 
