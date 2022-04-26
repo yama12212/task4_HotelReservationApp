@@ -356,50 +356,7 @@ main{
 }
 
 
-//検索結果インデックスビューレイアウト
-.room_container_field{
-  width: 100%;
-  padding: 30px 60px;
-}
 
-.room_container_field>h3{
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-.room_index_frame{
-  display: flex;
-  width: 100%;
-}
-
-.room_index_panel{
-  margin: 10px;
-  border: 1px solid rgba(82, 82, 82, 0.3)
-}
-
-.room_index_panel>img{
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.room_index_info{
-  color: #000;
-  padding: 0 10px 20px 10px;
-}
-
-.room_index_info>li{
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.room_index_info>li:first-of-type{
-  font-size: 22px;
-  color: rgb(100, 100, 100);
-}
-
-.room_index_info>li:last-of-type{
-  text-align: right;
-}
 
 
 //footerレイアウト
