@@ -2,28 +2,28 @@ ja:
   activerecord:
     models:
      rooms: ルーム情報
-     keywords: キーワード情報
+     keywords: キーワード検索
      reserves: 予約情報
      users: ユーザー情報
     attributes:
-     rooms:
+     room:
       id: ルームID
       name: ルーム名
       introduce: ルーム紹介
       single_rate: 1日あたりの単価
       address: 住所
       image_name: ルームイメージ写真
-     keywords:
+     keyword:
       keyword: キーワード
-     reserves:
+     reserve:
       start_date: チェックイン
       end_date: チェックアウト
       number_of_people: 宿泊人数
-     users:
+     user:
       name: ユーザー名
       introduce: 自己紹介
       image_name: ユーザーイメージ画像
-    
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
