@@ -1,0 +1,12 @@
+.room_container_field
+  h3 ="検索結果 : #{@count}件" 
+
+  .room_index_frame 
+    - @rooms.each do |room|
+      = link_to "","/rooms/#{room.id}/edit"
+      .room_index_panel
+        = image_tag("/#{room.image_name}")
+        .room_index_info 
+          = room.name
+          = room.address 
+          = "¥#{room.single_rate.to_s(:delimited)}"
