@@ -27,7 +27,7 @@ body
           =form_with url: searches_keyword_rooms_path,method: "get",class: "header_search_form" do |f|
             =f.button :type=>"submit" do 
               i class="fas fa-search"
-            =f.search_field :keyword_cont,:placeholder => "キーワードで検索"
+            =f.search_field :keyword,:placeholder => "キーワードで検索"
 
       -if user_signed_in?
         .header_user_info
