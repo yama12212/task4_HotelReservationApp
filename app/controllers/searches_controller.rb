@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
+
   def area
-    @q = Room.ransack(params[:q])
-    @rooms = @q.result
+    @rooms = @area.result
     @count = @rooms.count
   end
 
