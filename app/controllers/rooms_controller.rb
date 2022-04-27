@@ -22,11 +22,22 @@ class RoomsController < ApplicationController
   # POST /rooms or /rooms.json
   def create
     @room = Room.new(room_params)
+    @image = params[:room][:image_name]
 
+    if params[:room][:image_name]
+      @room.image_name = @image.original_filename
+    else
+      @room.image_name = "sample_room.jpeg"
+    end
+    
     respond_to do |format|
       if @room.save
-        format.html { redirect_to room_url(@room), notice: "Room was successfully created." }
+        if params[:room][:image_name]
+          File.binwrite("public/room_images/#{@room.image_name}",@image.read)
+        end
+        format.html { redirect_to room_url(@room), notice: "ルーム登録を完了しました" }
         format.json { render :show, status: :created, location: @room }
+        binding.pry
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @room.errors, status: :unprocessable_entity }
