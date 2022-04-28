@@ -5,7 +5,7 @@
     - @rooms.each do |room|
       = link_to "/rooms/#{room.id}/edit" do 
         .room_index_panel
-          = image_tag("/#{room.image_name}")
+          = image_tag("/room_images/#{room.image_name}")
           .room_index_info 
             = room.name
             = room.address 
