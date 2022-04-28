@@ -1,30 +1,35 @@
 /app/views/roomsから、app/views/sharedに移動しました。当ファイルをrenderによりパスされている場合は、shared/form　に変更してください
-= form_with(model: room,multipart: true) do |form|
-  - if room.errors.any?
-    #error_explanation
-      h2
-        = pluralize(room.errors.count, "error")
-        |  prohibited this room from being saved:
-      ul
-        - room.errors.each do |error|
-          li
-            = error.full_message
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :introduce
-    = form.text_area :introduce
-  .field
-    = form.label :single_rate
-    = form.number_field :single_rate
-  .field
-    = form.label :address
-    = form.text_field :address
-  .field
-    = form.label :image_name
-    = form.file_field :image_name
-  .field
-    = form.hidden_field :user_id,value: current_user.id
-  .actions
-    = form.submit
+.input_form_container
+  = form_with(model: room,multipart: true) do |form|
+    - if room.errors.any?
+      #error_explanation
+        h2
+          = room.errors.count
+          |  件の必須項目が未入力です
+        ul
+          - room.errors.each do |error|
+            li
+              = error.full_message
+    .input_form_field
+      .field
+        = form.label :name
+        span 必須
+        = form.text_field :name
+      .field
+        = form.label :introduce
+        = form.text_area :introduce
+      .field
+        = form.label :single_rate
+        span 必須
+        = form.number_field :single_rate
+      .field
+        = form.label :address
+        span 必須
+        = form.text_field :address
+      .field
+        = form.label :image_name
+        = form.file_field :image_name
+      .field
+        = form.hidden_field :user_id,value: current_user.id
+      .actions
+        = form.submit
