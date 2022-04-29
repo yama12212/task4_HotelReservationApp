@@ -29,7 +29,7 @@
       .form_field
         = form.label :image_name
         = form.file_field :image_name
-      .form_field
+      .hidden
         = form.hidden_field :user_id,value: current_user.id
       .form_action
         = form.submit

@@ -45,4 +45,39 @@
 
 .show_info_room_introduce{
   line-height: 100px;
-} 
+}
+
+
+//reserve入力フォームレイアウト
+.reserve_form{
+  width: 100%;
+  border: 2px solid rgba(82, 82, 82, 0.1);
+  height: fit-content;
+  margin-left: 20px;
+}
+
+.reserve_form>h5{
+  padding: 20px 0 0 20px;
+}
+
+.reserve_form_field{
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+}
+
+.reserve_form_field>label{
+  color:rgb(82, 82, 82);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.reserve_form_field>input{
+  width: 100%;
+}
+
+.reserve_form_field{
+  width: 100%;
+}
