@@ -1,13 +1,15 @@
 = render("shared/flash_message")
 
-.edit_container 
-  .edit_info
+.show_container 
+  .show_info
     = image_tag("/room_images/#{@room.image_name}")
-    .edit_info_room_detail
+    .show_info_room.show_info_room_detail
       = image_tag("/user_images/#{@room.user.image_name}")
-      = @room.name
-      = @room.address
-    .edit_info_room_introduce 
+      .show_info_room_name
+        h5 = @room.name
+          br
+        p = @room.address
+    .show_info_room.show_info_room_introduce 
       = @room.introduce 
   
   .reserve_form 
