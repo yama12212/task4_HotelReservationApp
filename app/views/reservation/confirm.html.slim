@@ -1,0 +1,22 @@
+.reserve_container
+  .reserve_input_form 
+    h4 予約内容確認
+
+    .reserve_form 
+    h5 = "¥#{@room.single_rate.to_s(:delimited)} / 日"
+    
+    = form_with model: @reserve, url: reservation_path do |f|
+      .input_form_fields
+        .form_field.reserve_form_field
+          = f.label :start_date, "チェックイン"
+          = f.date_field :start_date, value: params[:reserve][:start_date]
+        .form_field.reserve_form_field
+          = f.label :end_date, "チェックアウト"
+          = f.date_field :end_date, value: params[:reserve][:end_date]
+        .form_field.reserve_form_field
+          = f.label :number_of_people, "人数"
+          = f.number_field :number_of_people, value: params[:reserve][:number_of_people]
+        .hidden
+          = f.hidden_field :room_id, value: params[:reserve][:room_id]
+        .hidden 
+          = f.hidden_field :user_id, value: params[:reserve][:user_id]

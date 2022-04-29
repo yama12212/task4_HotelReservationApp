@@ -12,7 +12,7 @@ class Reserve < ApplicationRecord
   private
 
   def date_validate
-    return if start_date.blanc? || end_date.blanc?
+    return if start_date.blank? || end_date.blank?
     errors.add(:end_date, "は開始日よりも後の日付を選択してください") if self.end_date < self.start_date
   end
 end

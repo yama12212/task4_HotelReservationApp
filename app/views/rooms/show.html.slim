@@ -1,4 +1,5 @@
 = render("shared/flash_message")
+= render("shared/error", obj: @reserve)
 
 .show_container 
   .show_info
@@ -15,7 +16,7 @@
   .reserve_form 
     h5 = "¥#{@room.single_rate.to_s(:delimited)} / 日"
 
-    = form_with url: reservation_path, method: :get do |f|
+    = form_with model: @reserve, url: reservation_confirm_path do |f|
       .input_form_fields
         .form_field.reserve_form_field
           = f.label :start_date, "チェックイン"

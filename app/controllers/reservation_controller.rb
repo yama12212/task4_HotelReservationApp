@@ -1,6 +1,8 @@
 class ReservationController < ApplicationController
-  def new
-    @reserve = Reserve.new
+  def confirm
+    @reserve = Reserve.new(reserve_params)
+    @room = Room.find(@reserve.room_id)
+    render template: "rooms/show" if @reserve.invalid?
   end
 
   def create

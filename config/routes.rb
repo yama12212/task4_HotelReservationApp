@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'reservation' => "reservation#new"
+  post 'reservation/confirm' => 'reservation#confirm'
+  post 'reservation' => 'reservation#create'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations'
