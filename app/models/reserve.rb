@@ -7,4 +7,12 @@ class Reserve < ApplicationRecord
   validates :number_of_people, presence: true
   validates :room_id, presence: true
   validates :user_id, presence: true
+  validate :date_validate
+
+  private
+
+  def date_validate
+    return if start_date.blanc? || end_date.blanc?
+    errors.add(:end_date, "は開始日よりも後の日付を選択してください") if self.end_date < self.start_date
+  end
 end
