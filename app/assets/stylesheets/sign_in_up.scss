@@ -1,0 +1,93 @@
+//sign_in/up 共通ビューレイアウト
+.sign_form_content{
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 40px 150px;
+  border: 2px solid rgba(82, 82, 82, 0.1);
+  text-align: center;
+  width: fit-content;
+}
+
+.sign_form_content>h4{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.field{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.field>input{
+  border: 1px solid rgba(82, 82, 82, 0.3);
+  border-radius: 5px;
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.field>p{
+  background-color: rgb(255, 115, 35);
+  font-size: 12px;
+  border-radius: 5px;
+  color: #fff;
+  width: fit-content;
+  padding: 3px 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+}
+
+.actions{
+  background-color: #4696ff!important;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.actions>input{
+  display: inline-block;
+  color: #fff;
+  background-color: inherit;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+//sign_upレイアウト
+.sign_up_form>a{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+
+//sign_inレイアウト
+.sign_in_form>form>div:nth-of-type(2){
+  margin-bottom: 5px;
+}
+
+.sign_in_form>form>div:nth-of-type(3){
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sign_in_form>form>div:nth-of-type(3)>input:last-of-type{
+  width: 30px;
+  height: auto;
+}
+
+.sign_in_form>form>div:nth-of-type(3)>label{
+  font-size: 15px;
+}
+
+.sign_in_form>a{
+  display: inline-block;
+  margin-top: 10px;
+}

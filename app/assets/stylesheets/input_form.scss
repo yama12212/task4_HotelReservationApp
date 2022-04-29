@@ -1,0 +1,94 @@
+//入力フォームレイアウト
+.option_menu_form{
+  width: 100%;
+  display: flex;
+}
+
+.side_menu_form{
+  width: 15%;
+  border-right: 2px solid rgba(82, 82, 82, 0.1);
+  padding: 30px 15px 0 0;
+}
+
+.side_menu_form>p{
+  font-size: 18px;
+  color:rgb(70, 150, 255);
+  border-right: 3px solid rgb(22, 120, 248);
+  padding: 3px 0;
+  text-align: center;
+}
+
+.input_menu_form{
+  width: 100%;
+  background-color: rgba(230, 230, 230, 0.4);
+}
+
+.input_form_container{
+  width: 80%;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 2px solid rgba(82, 82, 82, 0.1);
+}
+
+.input_form_fields{
+  padding: 10px 25px;
+}
+
+.form_field{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  padding: 15px;
+}
+
+.form_field>label{
+  font-weight: bold;
+}
+
+.form_field>input,textarea{
+  border: 1px solid rgba(82, 82, 82, 0.3);
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 5px;
+  width: 70%;
+}
+
+.form_field>textarea{
+  height: 150px;
+}
+
+.form_field:first-of-type{
+  padding-left: 0;
+}
+
+.form_field:nth-of-type(6)>input{
+  border: none;
+}
+
+.form_field:nth-of-type(7){
+  display: none;
+}
+
+.form_action{
+  background-color: #4696ff!important;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  width: 100px;
+  margin: 10px 0 10px 10px;
+  transition: filter 0.5s;
+}
+
+.form_action:hover{
+  filter: brightness(120%);
+}
+
+.form_action>input{
+  display: inline-block;
+  color: #fff;
+  background-color: inherit;
+  border-radius: 5px;
+}

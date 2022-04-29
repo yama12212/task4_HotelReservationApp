@@ -1,0 +1,102 @@
+///topビューレイアウト
+//first-viewレイアウト
+.first_view{
+  width: 100%;
+  height: 700px;
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.first_view_search{
+  position: absolute;
+  top: 200px;
+  left: 120px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px 25px 40px 25px;
+  max-width: 35%;
+  border-radius: 5px;
+}
+
+.first_view_search>p:first-of-type{
+  font-size: 28px;
+}
+
+.first_view_search>p:last-of-type{
+  font-size: 14px;
+  margin-bottom: 0!important;
+}
+
+.first_view_search_area>input:first-of-type{
+  border: 1px solid rgba(133, 133, 133,0.5);
+  background-color: #fff;
+  height: 42px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.first_view_search_area>input{
+  width: 100%;
+  margin-top: 10px;
+  background-color: rgb(70, 150, 255);
+  color: #fff;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: filter 0.5s;
+}
+
+.first_view_search_area>input:last-of-type:hover{
+  filter: brightness(120%);
+}
+
+
+
+//recommendation_area_panelレイアウト
+.recommendation_area{
+  width: 100%;
+  padding: 40px 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.recommendation_area>p{
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 50px;
+  margin-bottom: 12px;
+}
+
+.recommendation_area_search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.recommendation_area_search_image{
+  max-width: 23%;
+}
+
+.recommendation_area_search_images>a>img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.recommendation_area_search_area_name{
+  position: relative;
+  bottom: 60px;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 115px;
+  font-size: 24px;
+  font-weight: bold;
+} 
