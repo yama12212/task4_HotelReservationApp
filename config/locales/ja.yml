@@ -12,7 +12,7 @@ ja:
       introduce: ルーム紹介
       single_rate: 1日あたりの単価
       address: 住所
-      image_name: ルームイメージ写真
+      image_name: ルーム画像
      keyword:
       keyword: キーワード
      reserve:
@@ -22,7 +22,7 @@ ja:
      user:
       name: ユーザー名
       introduce: 自己紹介
-      image_name: ユーザーイメージ画像
+      image_name: ユーザー画像
 
     errors:
       messages:

@@ -10,26 +10,26 @@
           - room.errors.each do |error|
             li
               = error.full_message
-    .input_form_field
-      .field
-        = form.label :name
-        span 必須
-        = form.text_field :name
-      .field
+    .input_form_fields
+      .form_field
+        h5
+          = input_form_title 
+      .form_field
+        = form.label :name, class: "mandatory"
+        = form.text_field :name,:placeholder => "ルーム名を入力"
+      .form_field
         = form.label :introduce
-        = form.text_area :introduce
-      .field
-        = form.label :single_rate
-        span 必須
-        = form.number_field :single_rate
-      .field
-        = form.label :address
-        span 必須
-        = form.text_field :address
-      .field
+        = form.text_area :introduce,:placeholder => "ルームの紹介/説明を入力"
+      .form_field
+        = form.label :single_rate, class: "mandatory"
+        = form.number_field :single_rate,:placeholder => "1日あたりの単価を入力"
+      .form_field
+        = form.label :address, class: "mandatory"
+        = form.text_field :address,:placeholder => "住所を入力"
+      .form_field
         = form.label :image_name
         = form.file_field :image_name
-      .field
+      .form_field
         = form.hidden_field :user_id,value: current_user.id
-      .actions
+      .form_action
         = form.submit
