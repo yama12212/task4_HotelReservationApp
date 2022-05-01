@@ -7,6 +7,7 @@ class Reserve < ApplicationRecord
   validates :number_of_people, presence: true
   validates :room_id, presence: true
   validates :user_id, presence: true
+  validates :total_rate, presence: true
   validate :date_validate
 
   private
