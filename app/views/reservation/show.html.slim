@@ -1,1 +1,19 @@
-h1 予約完了の画面
+=render "shared/flash_message"
+
+.input_menu_form
+  .input_form_container
+    .input_form_fields
+      - @reserve.each do |reserve|
+        - @room.each do |room|
+          .form_field.reserve_result_field
+            p 予約した部屋
+            = room.name
+          .form_field.reserve_result_field
+            p チェックイン日
+            = reserve.start_date
+          .form_field.reserve_result_field
+            p チェックアウト日
+            = reserve.end_date
+          .form_field.reserve_result_field
+            p 価格
+            = "#{reserve.total_rate.to_s(:delimited)}円" 

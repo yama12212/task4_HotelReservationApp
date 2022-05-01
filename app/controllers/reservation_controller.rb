@@ -18,6 +18,9 @@ class ReservationController < ApplicationController
   end
 
   def show
+    @reserve = Reserve.order(id: :desc).limit(1)
+    @room_id = @reserve.select("room_id")
+    @room = Room.where(id: @room_id)
   end
 
   private
