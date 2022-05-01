@@ -7,7 +7,7 @@ class ReservationController < ApplicationController
 
   def create
     @reserve = Reserve.new(reserve_params)
-    binding.pry
+
     if @reserve.save
       flash[:notice] = "予約が確定しました"
       redirect_to reservation_show_url
