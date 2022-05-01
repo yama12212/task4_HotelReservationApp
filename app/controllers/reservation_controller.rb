@@ -6,6 +6,18 @@ class ReservationController < ApplicationController
   end
 
   def create
+    @reserve = Reserve.new(reserve_params)
+    binding.pry
+    if @reserve.save
+      flash[:notice] = "予約が確定しました"
+      redirect_to reservation_show_url
+    else
+      flash[:notice] = "エラーが発生しました。もう一度予約をやり直してください"
+      redirect_to "/rooms/#{@reserve.room_id}"
+    end
+  end
+
+  def show
   end
 
   private
