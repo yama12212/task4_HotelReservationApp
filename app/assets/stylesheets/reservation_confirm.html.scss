@@ -1,0 +1,67 @@
+.reserve_confirm_container{
+  width: 40%;
+  padding: 20px;
+}
+
+.reserve_confirm_container>h4{
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  padding: 10px 0;
+}
+
+.reserve_confirm_form>h5{
+  padding: 10px 0;
+}
+
+.reserve_confirm_fields{
+  display: block;
+  justify-content: column;
+  padding: 0;
+}
+
+.reserve_confirm_field{
+  flex-direction: column;
+  border: none;
+  padding: 10px 0;
+}
+
+.reserve_confirm_number_of_people{
+  padding: 10px 0;
+}
+
+.reserve_confirm_number_of_people>p{
+  margin: 0;
+}
+
+.reserve_confirm_total_rate{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.reserve_confirm_total_rate>input{
+  margin: 10px 0;
+}
+
+.reserve_confirm_total_rate>p{
+  font-size: 14px;
+}
+
+.reserve_confirm_action_buttom{
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve_confirm_action_buttom>input{
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+  background-color: #4696ff;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.reserve_confirm_action_buttom>a{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
