@@ -17,6 +17,10 @@ class ReservationController < ApplicationController
     end
   end
 
+  def index
+    
+  end
+
   def show
     @reserve = Reserve.order(id: :desc).limit(1)
     @room_id = @reserve.select("room_id")

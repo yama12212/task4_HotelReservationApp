@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   post 'reservation/confirm' => 'reservation#confirm'
   post 'reservation' => 'reservation#create'
+  get 'reservation' => 'reservation#index'
   get 'reservation/show' => 'reservation#show'
 
   devise_for :users, :controllers => {
