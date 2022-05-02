@@ -32,21 +32,23 @@ body
       -if user_signed_in?
         .header_user_info
           p =current_user.name 
-          =image_tag "/user_images/#{current_user.image_name}"
+          input type="checkbox" id="user_menu"
+          label for="user_menu"
+            =image_tag "/user_images/#{current_user.image_name}"
+          .header_user_menu 
+              ul 
+                li =link_to "ルーム登録", new_room_path
+                li =link_to "予約済みルーム一覧", rooms_path
+                li =link_to "登録済みルーム一覧", rooms_path
+                li =link_to "設定", rooms_path
+                li =link_to "ログアウト", destroy_user_session_path,method: :delete
       -else    
         .header_login 
           =link_to "ログイン", new_user_session_path
           =link_to "新規登録", new_user_registration_path
     
-    -if user_signed_in?
-      .header_user_menu 
-          ul 
-            li =link_to "ルーム登録", new_room_path
-            li =link_to "作成ルーム一覧", rooms_url
-            li =link_to "予約済みルーム一覧", rooms_path
-            li =link_to "登録済みルーム一覧", rooms_path
-            li =link_to "設定", rooms_path
-            li =link_to "ログアウト", destroy_user_session_path,method: :delete
+
+        
 
     main
       = yield
