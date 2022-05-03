@@ -407,8 +407,7 @@ main{
   font-size: 18px;
   color:rgb(70, 150, 255);
   border-right: 3px solid rgb(22, 120, 248);
-  padding: 3px 0;
-  text-align: center;
+  padding: 3px 0 3px 40px;
 }
 
 .input_menu_form{
@@ -706,6 +705,37 @@ main{
 }
 
 
+//localhost:3000/users/account  ユーザーアカウント設定ページレイアウト
+.setting_account{
+  height: 100vh;
+}
+
+.setting_account>p:last-of-type{
+  border-right: none;
+}
+
+.setting_account>p>a:last-of-type{
+  color: #000;
+  transition: color 0.5s;
+}
+
+.setting_account>p>a:last-of-type:hover{
+  color: #4696ff;
+  cursor: pointer;
+}
+
+.setting_info{
+  justify-content: left;
+}
+
+.setting_info>p:first-of-type{
+  font-weight: bold;
+  width: 200px;
+}
+
+.form_action>a{
+  color: #fff;
+}
 
 
 

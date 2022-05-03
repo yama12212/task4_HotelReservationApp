@@ -1,0 +1,20 @@
+.option_menu_form 
+  .side_menu_form.setting_account 
+    p アカウント
+    p =link_to("プロフィール", users_profile_path)
+
+  .input_menu_form
+    .input_form_container
+      .input_form_fields
+        .form_field
+          h5 アカウント
+        .form_field.setting_info 
+          p メールアドレス
+          p = current_user.email 
+        .form_field.setting_info 
+          p パスワード
+          p 
+            | ********
+        .form_action
+          = link_to("編集", edit_user_registration_path)
+          
