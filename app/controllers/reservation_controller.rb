@@ -18,7 +18,7 @@ class ReservationController < ApplicationController
   end
 
   def index
-    @rooms = Reserve.joins(:room).select('reserves.*, rooms.*')
+    @rooms = Reserve.joins(:room).select('reserves.*, rooms.*').where(user_id: current_user)
   end
 
   def show
