@@ -734,6 +734,12 @@ main{
 }
 
 .form_action>a{
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+}
+
+.form_action>a:hover{
   color: #fff;
 }
 

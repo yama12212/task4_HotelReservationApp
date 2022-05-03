@@ -1,1 +1,24 @@
-h1 プロフィール編集画面
+.option_menu_form 
+  .side_menu_form.setting_profile 
+    p =link_to("アカウント", users_account_path)
+    p プロフィール
+
+  .input_menu_form
+    .input_form_container
+      / = form_with(model: @users, multipart: true, local: true) do |form|
+        / - if @users.errors.any?
+        /   #error_explanation
+        /     h2
+        /       = @users.errors.count
+        /       |  件の必須項目が未入力です
+        /     ul
+        /       - @users.errors.each do |error|
+        /         li
+        /           = error.full_message
+      .input_form_fields
+        .form_field
+          h5 プロフィール
+        .form_field
+          = image_tag("/user_images/#{current_user.image_name}")
+        .form_field
+          
