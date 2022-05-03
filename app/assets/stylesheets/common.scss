@@ -664,7 +664,47 @@ main{
 
 
 
-//localhost:3000/reservation  予約済み一覧ページレイアウト
+//localhost:3000/reservation, localhost:3000/rooms  予約済み一覧/登録済み一覧ページレイアウト
+.room_index{
+  width: 100%;
+  padding: 30px 50px;
+}
+
+.room_index>h4{
+  margin-bottom: 20px;
+}
+
+.room_index_record>table>thead{
+  border-top: 1px solid rgba(82, 82, 82, 0.3);
+  border-bottom: 1px solid rgba(82, 82, 82, 0.3); 
+  text-align: center;
+  height: 50px;
+  padding: 10px 0;
+  margin: 10px;
+}
+
+.room_index_record>table>tbody>tr>td{
+  padding: 10px;
+}
+
+.room_index_record>table>tbody>tr:nth-child(even){
+  background-color: rgba(230, 230, 230, 0.3);
+  border-top: 1px solid rgba(82, 82, 82, 0.1);
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1); 
+}
+
+.room_index_record>table>tbody>tr>td>img{
+  max-width: 250px;
+}
+
+.room_index_record>table>tbody>tr>td:nth-of-type(2){
+  font-weight: bold;
+}
+
+.room_index_record>table>tbody>tr>td:nth-of-type(3){
+  font-size: 14px;
+}
+
 
 
 

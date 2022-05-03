@@ -1,25 +1,28 @@
 .room_index
-  h3 予約済み一覧
+  h4 予約済み一覧
 
   .room_index_record
-    table
-      thead
-        tr
-          th = t("activerecord.attributes.room.image_name")
-          th = t("activerecord.attributes.room.name")
-          th = t("activerecord.attributes.room.introduce")
-          th = t("activerecord.attributes.reserve.total_rate")
-          th = t("activerecord.attributes.reserve.start_date")
-          th = t("activerecord.attributes.reserve.end_date")
-          th = t("activerecord.attributes.reserve.updated_at")
+    -if @rooms.present?
+      table
+        thead
+          tr
+            th = t("activerecord.attributes.room.image_name")
+            th = t("activerecord.attributes.room.name")
+            th = t("activerecord.attributes.room.introduce")
+            th = t("activerecord.attributes.reserve.total_rate")
+            th = t("activerecord.attributes.reserve.start_date")
+            th = t("activerecord.attributes.reserve.end_date")
+            th = t("activerecord.attributes.reserve.updated_at")
 
-      tbody
-      - @rooms.each do |room|
-        tr
-          td = image_tag("/room_images/#{room.room.image_name}")
-          td = room.room.name
-          td = room.room.introduce 
-          td = "¥#{room.total_rate.to_s(:delimited)}"
-          td = l room.start_date,format: :long
-          td = l room.end_date,format: :long
-          td = room.updated_at.to_s(:datetime_jp)
+        tbody
+        - @rooms.each do |room|
+          tr
+            td = image_tag("/room_images/#{room.room.image_name}")
+            td = link_to("#{room.room.name}", "/rooms/#{room.room.id}")
+            td = room.room.introduce 
+            td = "¥#{room.total_rate.to_s(:delimited)}"
+            td = l room.start_date,format: :long
+            td = l room.end_date,format: :long
+            td = room.updated_at.to_s(:datetime_jp)
+    -else
+      h5 予約済みのレコードが存在しません
