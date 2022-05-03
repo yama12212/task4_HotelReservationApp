@@ -18,7 +18,7 @@ class ReservationController < ApplicationController
   end
 
   def index
-    
+    @rooms = Reserve.joins(:room).select('reserves.*, rooms.*')
   end
 
   def show
