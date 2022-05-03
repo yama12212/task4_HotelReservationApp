@@ -1,1 +1,21 @@
-h3 登録済みルーム一覧（ユーザーごと）
+.room_index
+  h3 登録済みルーム一覧
+
+  .room_index_record
+    table
+      thead
+        tr
+          th = t("activerecord.attributes.room.image_name")
+          th = t("activerecord.attributes.room.name")
+          th = t("activerecord.attributes.room.introduce")
+          th = t("activerecord.attributes.room.single_rate")
+          th = t("activerecord.attributes.room.created_at")
+      
+      tbody 
+      - @rooms.each do |room|
+        tr 
+          td = image_tag("/room_images/#{room.image_name}")
+          td = room.name
+          td = room.introduce 
+          td = "¥#{room.single_rate.to_s(:delimited)}" 
+          td = room.created_at.to_s(:datetime_jp)

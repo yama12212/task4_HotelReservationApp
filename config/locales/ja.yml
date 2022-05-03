@@ -13,6 +13,7 @@ ja:
       single_rate: 1日あたりの単価
       address: 住所
       image_name: ルーム画像
+      created_at: 作成日
      keyword:
       keyword: キーワード
      reserve:
