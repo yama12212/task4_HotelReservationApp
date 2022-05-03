@@ -41,6 +41,143 @@ ul,li{
 }
 
 
+//headerレイアウト
+header{
+  background-color: #000;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 0 20px;
+}
+
+.header_search{
+  display: flex;
+}
+
+.header_search_box{
+  display: flex;
+  align-items: center;
+}
+
+.header_search_form>button{
+  background-color: #fff;
+  padding: 7.5px;
+  font-size: 14px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.header_search_form>input{
+  height: 36px;
+  width: 200px;
+  font-size: 14px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left: 5px;
+}
+
+.header_search_form:last-of-type{
+  margin-left: 10px;
+}
+
+
+
+//headerログイン/新規登録ボタン（current_user = nilの場合に表示）
+.header_login>:first-of-type{
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(70, 150, 255);
+  padding: 8px 12px;
+  text-align: center;
+  margin-top: 15px;
+  transition: filter 0.5s;
+}
+
+.header_login>:last-of-type{
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(136, 136, 136);
+  margin-left: 20px;
+  padding: 8px 12px;
+  transition: filter 0.5s;
+}
+
+.header_login>:first-of-type:hover{
+  filter: brightness(120%);
+}
+
+.header_login>:last-of-type:hover{
+  filter: brightness(120%);
+}
+
+
+
+//userログイン時のユーザー名/ユーザーイメージ画像レイアウト
+.header_user_info{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.header_user_info>input{
+  display: none;
+}
+
+.header_user_info>input:checked + label + div{
+  display: block;
+}
+
+.header_user_info>p{
+  margin: 0 30px 0 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.header_user_info>label{
+  height: 100%;
+  line-height: 100%;
+}
+
+.header_user_info>label>img{
+  height: 90%;
+  border-radius: 50px;
+  margin-top: 5%;
+}
+
+
+
+//userログイン時のユーザーイメージ画像タップ時のユーザーメニューレイアウト
+.header_user_menu{
+  z-index: 10;
+  background-color: #fff;
+  width: fit-content;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  display: none;
+}
+
+.header_user_menu>ul{
+  padding: 30px 20px;
+  margin: 0;
+}
+
+.header_user_menu>ul>li{
+  margin-bottom: 10px;
+}
+
+.header_user_menu>ul>li:last-of-type{
+  margin-bottom: 0px;
+}
+
+.header_user_menu>ul>li>a{
+  color: #000;
+}
+
+
+
 //画面空白部分の高さ調整（設定を触らないでください）
 main{
   flex-grow: 1;
@@ -51,6 +188,480 @@ main{
 .hidden{
   display: none;
 }
+
+
+///topビューレイアウト
+//first-viewレイアウト
+.first_view{
+  width: 100%;
+  height: 700px;
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.first_view_search{
+  position: absolute;
+  top: 200px;
+  left: 120px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px 25px 40px 25px;
+  max-width: 35%;
+  border-radius: 5px;
+}
+
+.first_view_search>p:first-of-type{
+  font-size: 28px;
+}
+
+.first_view_search>p:last-of-type{
+  font-size: 14px;
+  margin-bottom: 0!important;
+}
+
+.first_view_search_area>input:first-of-type{
+  border: 1px solid rgba(133, 133, 133,0.5);
+  background-color: #fff;
+  height: 42px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.first_view_search_area>input{
+  width: 100%;
+  margin-top: 10px;
+  background-color: rgb(70, 150, 255);
+  color: #fff;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: filter 0.5s;
+}
+
+.first_view_search_area>input:last-of-type:hover{
+  filter: brightness(120%);
+}
+
+
+
+//recommendation_area_panelレイアウト
+.recommendation_area{
+  width: 100%;
+  padding: 40px 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.recommendation_area>p{
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 50px;
+  margin-bottom: 12px;
+}
+
+.recommendation_area_search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.recommendation_area_search_image{
+  max-width: 23%;
+}
+
+.recommendation_area_search_images>a>img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.recommendation_area_search_area_name{
+  position: relative;
+  bottom: 60px;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 115px;
+  font-size: 24px;
+  font-weight: bold;
+} 
+
+
+//sign_in/up 共通ビューレイアウト
+.sign_form_content{
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 40px 150px;
+  border: 2px solid rgba(82, 82, 82, 0.1);
+  text-align: center;
+  width: fit-content;
+}
+
+.sign_form_content>h4{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.field{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.field>input{
+  border: 1px solid rgba(82, 82, 82, 0.3);
+  border-radius: 5px;
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.field>p{
+  background-color: rgb(255, 115, 35);
+  font-size: 12px;
+  border-radius: 5px;
+  color: #fff;
+  width: fit-content;
+  padding: 3px 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+}
+
+.actions{
+  background-color: #4696ff!important;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.actions>input{
+  display: inline-block;
+  color: #fff;
+  background-color: inherit;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+//sign_upレイアウト
+.sign_up_form>a{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+
+//sign_inレイアウト
+.sign_in_form>form>div:nth-of-type(2){
+  margin-bottom: 5px;
+}
+
+.sign_in_form>form>div:nth-of-type(3){
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sign_in_form>form>div:nth-of-type(3)>input:last-of-type{
+  width: 30px;
+  height: auto;
+}
+
+.sign_in_form>form>div:nth-of-type(3)>label{
+  font-size: 15px;
+}
+
+.sign_in_form>a{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+
+//入力フォームレイアウト
+.option_menu_form{
+  width: 100%;
+  display: flex;
+}
+
+.side_menu_form{
+  width: 15%;
+  border-right: 2px solid rgba(82, 82, 82, 0.1);
+  padding: 30px 15px 0 0;
+  background-color: #fff;
+}
+
+.side_menu_form>p{
+  font-size: 18px;
+  color:rgb(70, 150, 255);
+  border-right: 3px solid rgb(22, 120, 248);
+  padding: 3px 0;
+  text-align: center;
+}
+
+.input_menu_form{
+  width: 100%;
+}
+
+.input_form_container{
+  width: 80%;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 2px solid rgba(82, 82, 82, 0.1);
+}
+
+.input_form_fields{
+  padding: 10px 25px;
+}
+
+.form_field{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  padding: 15px;
+}
+
+.form_field>label{
+  font-weight: bold;
+}
+
+.form_field>input,textarea{
+  border: 1px solid rgba(82, 82, 82, 0.3);
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 5px;
+  width: 70%;
+}
+
+.form_field>textarea{
+  height: 150px;
+}
+
+.form_field:first-of-type{
+  padding-left: 0;
+}
+
+.form_field:nth-of-type(6)>input{
+  border: none;
+}
+
+.form_action{
+  background-color: #4696ff!important;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  width: 100px;
+  margin: 10px 0 10px 10px;
+  transition: filter 0.5s;
+}
+
+.form_action:hover{
+  filter: brightness(120%);
+}
+
+.form_action>input{
+  display: inline-block;
+  color: #fff;
+  background-color: inherit;
+  border-radius: 5px;
+}
+
+
+//rooms/show画面レイアウト
+//room詳細画面レイアウト
+.show_container{
+  display: flex;
+  width: 100%;
+  padding: 30px 120px;
+}
+
+.show_info{
+  display: flex;
+  flex-direction: column;
+  max-width: 65%;
+}
+
+.show_info>img{
+  width: 100%;
+}
+
+.show_info_room{
+  height: 100px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  margin-left: 10px;
+}
+
+.show_info_room_detail{
+  display: flex;
+  align-items: center;
+}
+
+.show_info_room_detail>img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  margin: 10px 0;
+}
+
+.show_info_room_name{
+  margin-left: 20px;
+}
+
+.show_info_room_name>h5{
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.show_info_room_introduce{
+  line-height: 100px;
+}
+
+
+//reserve入力フォームレイアウト
+.reserve_form{
+  width: 100%;
+  border: 2px solid rgba(82, 82, 82, 0.1);
+  height: fit-content;
+  margin-left: 20px;
+  background-color: #fff;
+}
+
+.reserve_form>h5{
+  padding: 20px 0 0 20px;
+}
+
+.reserve_form_field{
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+}
+
+.reserve_form_field>label{
+  color:rgb(82, 82, 82);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.reserve_form_field>input{
+  width: 100%;
+}
+
+.reserve_form_field{
+  width: 100%;
+}
+
+
+//予約確認画面レイアウト
+.reserve_confirm_container{
+  width: 40%;
+  padding: 20px;
+}
+
+.reserve_confirm_container>h4{
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  padding: 10px 0;
+}
+
+.reserve_confirm_form>h5{
+  padding: 10px 0;
+}
+
+.reserve_confirm_fields{
+  display: block;
+  justify-content: column;
+  padding: 0;
+}
+
+.reserve_confirm_field{
+  flex-direction: column;
+  border: none;
+  padding: 10px 0;
+}
+
+.reserve_confirm_number_of_people{
+  padding: 10px 0;
+}
+
+.reserve_confirm_number_of_people>p{
+  margin: 0;
+}
+
+.reserve_confirm_total_rate{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.reserve_confirm_total_rate>input{
+  margin: 10px 0;
+}
+
+.reserve_confirm_total_rate>p{
+  font-size: 14px;
+}
+
+.reserve_confirm_action_buttom{
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve_confirm_action_buttom>input{
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+  background-color: #4696ff;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.reserve_confirm_action_buttom>a{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+
+//予約完了ページレイアウト
+.reserve_result_container{
+  max-width: 880px;
+}
+
+.reserve_result_field{
+  justify-content: left;
+}
+
+.reserve_result_field>p{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.reserve_result_field>p:first-of-type{
+  font-weight: bold;
+  width: 200px;
+}
+
+.reserve_result_field:first-of-type{
+  padding-left: 15px;
+}
+
+
 
 //footerレイアウト
 footer{
