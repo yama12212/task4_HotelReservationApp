@@ -190,7 +190,7 @@ main{
 }
 
 
-///topビューレイアウト
+///localhost:3000/topビューレイアウト
 //first-viewレイアウト
 .first_view{
   width: 100%;
@@ -247,7 +247,7 @@ main{
 
 
 
-//recommendation_area_panelレイアウト
+//おすすめのエリアイメージレイアウト
 .recommendation_area{
   width: 100%;
   padding: 40px 0px;
@@ -294,7 +294,7 @@ main{
 } 
 
 
-//sign_in/up 共通ビューレイアウト
+//localhost:3000/sign_in/up 共通ビューレイアウト
 .sign_form_content{
   margin-right: auto;
   margin-left: auto;
@@ -390,7 +390,7 @@ main{
 
 
 
-//入力フォームレイアウト
+//localhost:3000/rooms/new 入力フォームレイアウト
 .option_menu_form{
   width: 100%;
   display: flex;
@@ -482,7 +482,8 @@ main{
 }
 
 
-//rooms/show画面レイアウト
+
+//localhost:3000/rooms/:id画面レイアウト
 //room詳細画面レイアウト
 .show_container{
   display: flex;
@@ -568,7 +569,7 @@ main{
 }
 
 
-//予約確認画面レイアウト
+//localhost:3000/reservation/confirm  予約確認画面レイアウト
 .reserve_confirm_container{
   width: 40%;
   padding: 20px;
@@ -638,7 +639,7 @@ main{
 }
 
 
-//予約完了ページレイアウト
+//localhost:3000/reservation/show  予約完了ページレイアウト
 .reserve_result_container{
   max-width: 880px;
 }
@@ -660,6 +661,11 @@ main{
 .reserve_result_field:first-of-type{
   padding-left: 15px;
 }
+
+
+
+//localhost:3000/reservation  予約済み一覧ページレイアウト
+
 
 
 

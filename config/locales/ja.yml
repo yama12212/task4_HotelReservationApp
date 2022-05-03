@@ -20,6 +20,7 @@ ja:
       end_date: チェックアウト
       number_of_people: 宿泊人数
       total_rate: 合計金額
+      updated_at: 予約確定日時
      user:
       name: ユーザー名
       introduce: 自己紹介
