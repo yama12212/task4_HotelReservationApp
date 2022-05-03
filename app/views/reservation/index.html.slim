@@ -20,6 +20,6 @@
           td = room.room.name
           td = room.room.introduce 
           td = "¥#{room.total_rate.to_s(:delimited)}"
-          td = room.start_date
-          td = room.end_date
-          td = room.updated_at 
+          td = l room.start_date,format: :long
+          td = l room.end_date,format: :long
+          td = room.updated_at.to_s(:datetime_jp)
