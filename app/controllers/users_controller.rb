@@ -8,7 +8,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:user][:id])
+    @image = params[:user][:image_name]
+
     if @user.update(user_params)
+
+      if params[:user][:image_name]
+        @image_name = "#{current_user.id}.jpeg"
+        File.binwrite("public/user_images/#{@image_name}",@image.read)
+      else
+        @image_name = "default_user_image.jpeg"
+      end
+      @user.update(image_name: @image_name)
+
       flash[:notice] = "ユーザーの情報を更新しました"
       redirect_to("/user/#{current_user.id}")
     else

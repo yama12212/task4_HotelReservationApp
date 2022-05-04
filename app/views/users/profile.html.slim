@@ -24,7 +24,7 @@
           .form_field.profile
             = image_tag("/user_images/#{current_user.image_name}")
           .form_field.profile
-            = form.label :image_name, t("activerecord.attributes.user.image_name"), class: "mandatory"
+            = form.label :image_name, t("activerecord.attributes.user.image_name")
             = form.file_field :image_name
           .form_field.profile
             = form.label :name, t("activerecord.attributes.user.name"), class: "mandatory"
