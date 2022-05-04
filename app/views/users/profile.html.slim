@@ -1,24 +1,37 @@
 .option_menu_form 
   .side_menu_form.setting_profile 
-    p =link_to("アカウント", users_account_path)
+    p =link_to("アカウント", user_path)
     p プロフィール
 
   .input_menu_form
     .input_form_container
-      / = form_with(model: @users, multipart: true, local: true) do |form|
-        / - if @users.errors.any?
-        /   #error_explanation
-        /     h2
-        /       = @users.errors.count
-        /       |  件の必須項目が未入力です
-        /     ul
-        /       - @users.errors.each do |error|
-        /         li
-        /           = error.full_message
-      .input_form_fields
-        .form_field
-          h5 プロフィール
-        .form_field
-          = image_tag("/user_images/#{current_user.image_name}")
-        .form_field
+      = form_with url: "/user/#{current_user.id}", scope: :user, method: :patch, local: true, multipart: true do |form|
+        - if @user.errors.any?
+          #error_explanation
+            h2
+              = @user.errors.count
+              |  件の必須項目が未入力です
+            ul
+              - @user.errors.each do |error|
+                li
+                  = error.full_message
+        .input_form_fields
+          .form_field.profile
+            h5 プロフィール
+          .hidden 
+            = form.hidden_field :id, value: current_user.id
+          .form_field.profile
+            = image_tag("/user_images/#{current_user.image_name}")
+          .form_field.profile
+            = form.label :image_name, t("activerecord.attributes.user.image_name"), class: "mandatory"
+            = form.file_field :image_name
+          .form_field.profile
+            = form.label :name, t("activerecord.attributes.user.name"), class: "mandatory"
+            = form.text_field :name, value: @user.name, :placeholder => "名前を入力"
+          .form_field.profile
+            = form.label :introduce, t("activerecord.attributes.user.introduce")
+            = form.text_area :introduce, value: @user.introduce, :placeholder => "自己紹介を入力"
+          .form_action
+            = form.submit "更新する"
+          
           

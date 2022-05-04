@@ -1,7 +1,7 @@
 .option_menu_form 
   .side_menu_form.setting_account 
     p アカウント
-    p =link_to("プロフィール", users_profile_path)
+    p =link_to("プロフィール", "/user/#{current_user.id}")
 
   .input_menu_form
     .input_form_container
