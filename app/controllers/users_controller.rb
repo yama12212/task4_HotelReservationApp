@@ -8,8 +8,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:user][:id])
-    @user.update(user_params)
-    redirect_to("/rooms")
+    if @user.update(user_params)
+      flash[:notice] = "ユーザーの情報を更新しました"
+      redirect_to("/user/#{current_user.id}")
+    else
+      flash[:notice] = "ユーザーの情報を更新できませんでした。"
+      render("users/profile")
+    end
+    
   end
 
   private

@@ -4,6 +4,7 @@
     p プロフィール
 
   .input_menu_form
+    =render("shared/flash_message")
     .input_form_container
       = form_with url: "/user/#{current_user.id}", scope: :user, method: :patch, local: true, multipart: true do |form|
         - if @user.errors.any?
