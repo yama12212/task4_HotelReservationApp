@@ -40,8 +40,11 @@ class RoomsController < ApplicationController
         if params[:room][:image_name]
           File.binwrite("public/room_images/#{@room.image_name}",@image.read)
         end
+        
         #キーワードを中間テーブルに保存
-        RoomsKeywordsSearch.new(room_id: @room.id, keyword_id: @keyword_params.id).save
+        unless @keyword_params == nil
+          RoomsKeywordsSearch.new(room_id: @room.id, keyword_id: @keyword_params.id).save
+        end
 
         format.html { redirect_to room_url(@room), notice: "ルーム登録を完了しました" }
         format.json { render :show, status: :created, location: @room }
