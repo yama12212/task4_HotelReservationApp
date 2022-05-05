@@ -490,6 +490,53 @@ main{
 }
 
 
+//localhost:3000/rooms/searches/area画面レイアウト
+//localhost:3000/rooms/searches/keyword画面レイアウト
+.room_container_field{
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.room_index_flexbox{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room_index_frame{
+  max-width: 25%;
+  padding: 5px 10px;
+}
+
+.room_index_inner{
+  border: 1px solid rgba(82, 82, 82, 0.3);
+}
+
+.room_index_panel>img{
+  width: 100%;
+}
+
+.room_index_info{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 0 15px;
+  color: #000;
+}
+
+.room_index_info>h5{
+  font-weight: bold;
+  color: rgb(150, 150, 150);
+}
+
+.room_index_info>p:first-of-type{
+  font-weight: bold;
+}
+
+.room_index_info>p:last-of-type{
+  text-align: right;
+  padding-right: 10px;
+  font-size: 18px;
+}
+
 
 //localhost:3000/rooms/:id画面レイアウト
 //room詳細画面レイアウト

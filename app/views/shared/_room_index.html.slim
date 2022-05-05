@@ -1,12 +1,14 @@
 .room_container_field
   h3 ="検索結果 : #{@count}件" 
-
-  .room_index_frame 
+  
+  .room_index_flexbox 
     - @rooms.each do |room|
-      = link_to "/rooms/#{room.id}" do 
-        .room_index_panel
-          = image_tag("/room_images/#{room.image_name}")
-          .room_index_info 
-            = room.name
-            = room.address 
-            = "¥#{room.single_rate.to_s(:delimited)}"
+      .room_index_frame
+        .room_index_inner
+          = link_to "/rooms/#{room.id}" do 
+            .room_index_panel
+              = image_tag("/room_images/#{room.image_name}")
+              .room_index_info 
+                h5 = room.name
+                p = room.address 
+                p = "¥#{room.single_rate.to_s(:delimited)}"
