@@ -39,7 +39,7 @@ class RoomsController < ApplicationController
         format.html { redirect_to room_url(@room), notice: "ルーム登録を完了しました" }
         format.json { render :show, status: :created, location: @room }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity, alert: "ルームが登録できませんでした" }
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end

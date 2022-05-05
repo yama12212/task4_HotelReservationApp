@@ -12,7 +12,7 @@ class ReservationController < ApplicationController
       flash[:notice] = "予約が確定しました"
       redirect_to reservation_show_url
     else
-      flash[:notice] = "エラーが発生しました。もう一度予約をやり直してください"
+      flash[:alert] = "エラーが発生しました。もう一度予約をやり直してください"
       redirect_to "/rooms/#{@reserve.room_id}"
     end
   end

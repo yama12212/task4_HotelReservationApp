@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザーの情報を更新しました"
       redirect_to("/user/#{current_user.id}")
     else
-      flash[:notice] = "ユーザーの情報を更新できませんでした。"
+      flash[:alert] = "ユーザーの情報を更新できませんでした。"
       render("users/profile")
     end
     
