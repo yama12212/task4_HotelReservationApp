@@ -30,7 +30,7 @@
         = form.label :image_name
         = form.file_field :image_name
       .form_field 
-        = form.label :keyword
+        = form.label :keyword, t("activerecord.attributes.keyword.keyword")
         = form.text_field :keyword,:placeholder => "キーワードを入力"
       .hidden
         = form.hidden_field :user_id,value: current_user.id

@@ -11,7 +11,12 @@
           br
         p = @room.address
     .show_info_room.show_info_room_introduce 
-      = @room.introduce 
+      = @room.introduce
+    .show_info_room.show_info_room_keyword
+     p キーワード
+     -@keyword.each do |keyword|
+      ul
+        li = keyword.keyword 
   
   .reserve_form 
     h5 = "¥#{@room.single_rate.to_s(:delimited)} / 日"

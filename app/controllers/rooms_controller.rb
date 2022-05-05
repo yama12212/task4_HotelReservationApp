@@ -9,6 +9,9 @@ class RoomsController < ApplicationController
   # GET /rooms/1 or /rooms/1.json
   def show
     @reserve = Reserve.new
+    @search = RoomsKeywordsSearch.where(room_id: @room.id)
+    @search_id = @search.select("keyword_id")
+    @keyword = Keyword.where(id: @search_id)
   end
 
   # GET /rooms/new
