@@ -24,6 +24,7 @@ ja:
       updated_at: 予約確定日時
      user:
       name: ユーザー名
+      email: メールアドレス
       introduce: 自己紹介
       image_name: ユーザー画像
 

@@ -297,11 +297,12 @@ main{
 
 //localhost:3000/sign_in/up 共通ビューレイアウト
 .sign_form_content{
+  background-color: #fff;
   margin-right: auto;
   margin-left: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  padding: 40px 150px;
+  padding: 40px 120px;
   border: 2px solid rgba(82, 82, 82, 0.1);
   text-align: center;
   width: fit-content;
@@ -368,19 +369,19 @@ main{
   margin-bottom: 5px;
 }
 
-.sign_in_form>form>div:nth-of-type(3){
+.sign_in_form>form>.remember_login_checkbox{
   height: 30px;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.sign_in_form>form>div:nth-of-type(3)>input:last-of-type{
+.sign_in_form>form>.remember_login_checkbox>input:last-of-type{
   width: 30px;
   height: auto;
 }
 
-.sign_in_form>form>div:nth-of-type(3)>label{
+.sign_in_form>form>.remember_login_checkbox>label{
   font-size: 15px;
 }
 
@@ -775,9 +776,25 @@ main{
 }
 
 
+//localhost:3000/user/edit  ユーザーアカウント編集ページレイアウト
+.user_account_edit{
+  flex-direction: column;
+  margin-bottom: 15px!important;
+}
 
+.user_account_edit>input{
+  width: 350px;
+}
 
+.cancel_account_button{
+  margin-top: 50px;
+  background-color: rgb(255, 0, 0)!important;
+}
 
+.cancel_account_button>form>input:nth-of-type(2){
+  background-color: inherit;
+  color: #fff;
+}
 
 
 
