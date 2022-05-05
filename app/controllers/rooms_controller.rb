@@ -14,6 +14,7 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   def new
     @room = Room.new
+    @keyword = RoomsKeywordsSearch.new
   end
 
   # GET /rooms/1/edit
@@ -24,18 +25,24 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     @image = params[:room][:image_name]
-
+    
     if params[:room][:image_name]
       @room.image_name = @image.original_filename
     else
       @room.image_name = "sample_room.jpeg"
     end
+
+    @keyword_params = Keyword.find_by(keyword: params[:room][:keyword])
     
     respond_to do |format|
       if @room.save
+        #画像をpublicディレクトリに保存
         if params[:room][:image_name]
           File.binwrite("public/room_images/#{@room.image_name}",@image.read)
         end
+        #キーワードを中間テーブルに保存
+        RoomsKeywordsSearch.new(room_id: @room.id, keyword_id: @keyword_params.id).save
+
         format.html { redirect_to room_url(@room), notice: "ルーム登録を完了しました" }
         format.json { render :show, status: :created, location: @room }
       else
