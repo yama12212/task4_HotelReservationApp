@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @user_params = User.find(params[:id])
+    unless @user_params.id == current_user.id
+      flash.now[:alert] = "他のユーザーのプロフィール編集にはアクセスできません"
+      render("homes/top")
+    end
     @user = User.find(current_user.id)
   end
 
