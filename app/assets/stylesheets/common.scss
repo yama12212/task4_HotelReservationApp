@@ -142,6 +142,7 @@ header{
 
 .header_user_info>label>img{
   height: 90%;
+  max-width: 60px;
   border-radius: 50px;
   margin-top: 5%;
 }
@@ -705,7 +706,7 @@ main{
 }
 
 
-//localhost:3000/users/account  ユーザーアカウント設定ページレイアウト
+//localhost:3000/user  ユーザーアカウント設定ページレイアウト
 .setting_account{
   height: 100vh;
 }
@@ -742,6 +743,42 @@ main{
 .form_action>a:hover{
   color: #fff;
 }
+
+
+//localhost:3000/user/:id  ユーザープロフィール編集ページレイアウト
+.setting_profile>p:first-of-type{
+  border-right: none;
+}
+
+.setting_profile>p>a:first-of-type{
+  color: #000;
+  transition: color 0.5s;
+}
+
+.setting_profile>p>a:first-of-type:hover{
+  color: #4696ff;
+  cursor: pointer;
+}
+
+.input_form_fields>.profile:nth-of-type(3){
+  justify-content: center;
+}
+
+.input_form_fields>.profile:nth-of-type(3)>img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.input_form_fields>.profile:nth-of-type(4)>input{
+  border: none;
+}
+
+
+
+
+
+
 
 
 
