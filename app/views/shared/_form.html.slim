@@ -1,0 +1,38 @@
+/app/views/roomsから、app/views/sharedに移動しました。当ファイルをrenderによりパスされている場合は、shared/form　に変更してください
+.input_form_container
+  = form_with(model: room,multipart: true) do |form|
+    - if room.errors.any?
+      #error_explanation
+        h2
+          = room.errors.count
+          |  件の必須項目が未入力です
+        ul
+          - room.errors.each do |error|
+            li
+              = error.full_message
+    .input_form_fields
+      .form_field
+        h5
+          = input_form_title 
+      .form_field
+        = form.label :name, class: "mandatory"
+        = form.text_field :name,:placeholder => "ルーム名を入力"
+      .form_field
+        = form.label :introduce
+        = form.text_area :introduce,:placeholder => "ルームの紹介/説明を入力"
+      .form_field
+        = form.label :single_rate, class: "mandatory"
+        = form.number_field :single_rate,:placeholder => "1日あたりの単価を入力"
+      .form_field
+        = form.label :address, class: "mandatory"
+        = form.text_field :address,:placeholder => "住所を入力"
+      .form_field
+        = form.label :image_name
+        = form.file_field :image_name
+      .form_field 
+        = form.label :keyword, t("activerecord.attributes.keyword.keyword")
+        = form.text_field :keyword,:placeholder => "キーワードを入力"
+      .hidden
+        = form.hidden_field :user_id,value: current_user.id
+      .form_action
+        = form.submit
