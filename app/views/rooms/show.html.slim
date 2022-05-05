@@ -14,8 +14,8 @@
       = @room.introduce
     .show_info_room.show_info_room_keyword
      p キーワード
-     -@keyword.each do |keyword|
-      ul
+     ul
+      -@keyword.each do |keyword|
         li = keyword.keyword 
   
   .reserve_form 

@@ -595,6 +595,21 @@ main{
   line-height: 100px;
 }
 
+.show_info_room_keyword{
+  height: fit-content;
+}
+
+.show_info_room_keyword>p{
+  font-weight: bold;
+  margin: 8px;
+}
+
+.show_info_room_keyword>ul>li{
+  list-style-type: circle;
+}
+
+
+
 
 //reserve入力フォームレイアウト
 .reserve_form{
