@@ -3,11 +3,12 @@ class ReservationController < ApplicationController
     @reserve = Reserve.new(reserve_params)
     @room = Room.find(@reserve.room_id)
 
-    @search = RoomsKeywordsSearch.where(room_id: @room.id)
-    @search_id = @search.select("keyword_id")
-    @keyword = Keyword.where(id: @search_id)
+    # @search = RoomsKeywordsSearch.where(room_id: @room.id)
+    # @search_id = @search.select("keyword_id")
+    # @keywords = Keyword.where(id: @search_id)
+    @keywords = @room.keywords
 
-    render template: "rooms/show" if @reserve.invalid?
+    render "rooms/show" if @reserve.invalid?
   end
 
   def create

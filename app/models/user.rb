@@ -8,5 +8,5 @@ class User < ApplicationRecord
   validates :image_name, presence: true
 
   has_many :rooms
-  has_many :reserves
+  has_many :reserves, dependent: :destroy
 end

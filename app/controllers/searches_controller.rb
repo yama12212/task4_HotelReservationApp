@@ -6,10 +6,10 @@ class SearchesController < ApplicationController
   end
 
   def keyword
-    @keywords = Keyword.where("keyword like ?", "%#{params[:keyword]}%")
-    @search = RoomsKeywordsSearch.where(keyword_id: @keywords)
-    @search_room_id = @search.select("room_id")
-    @rooms = Room.where(id: @search_room_id)
+    keywords = Keyword.where("keyword like ?", "%#{params[:keyword]}%")
+    search = RoomsKeywordsSearch.where(keyword_id: keywords)
+    search_room_id = search.select("room_id")
+    @rooms = Room.where(id: search_room_id)
     @count = @rooms.count
   end
 end

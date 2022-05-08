@@ -1,8 +1,8 @@
 class Room < ApplicationRecord
   has_many :rooms_keywords_searches
   has_many :keywords, through: :rooms_keywords_searches
-  has_many :reverses
-  belongs_to :user, optional: true
+  has_many :reverses, dependent: :destroy
+  belongs_to :user
 
   validates :name, presence: true
   validates :single_rate, presence: true

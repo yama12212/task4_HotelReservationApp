@@ -3,15 +3,18 @@ class RoomsController < ApplicationController
 
   # GET /rooms or /rooms.json
   def index
-    @rooms = Room.where(user_id: current_user)
+    # @rooms = Room.where(user_id: current_user)
+    @rooms = current_user.rooms
   end
 
   # GET /rooms/1 or /rooms/1.json
   def show
     @reserve = Reserve.new
-    @search = RoomsKeywordsSearch.where(room_id: @room.id)
-    @search_id = @search.select("keyword_id")
-    @keyword = Keyword.where(id: @search_id)
+
+    # @search = RoomsKeywordsSearch.where(room_id: @room.id)
+    # @search_id = @search.select("keyword_id")
+    # @keywords = Keyword.where(id: @search_id)
+    @keywords = @room.keywords
   end
 
   # GET /rooms/new
@@ -45,8 +48,8 @@ class RoomsController < ApplicationController
         end
         
         #キーワードを中間テーブルに保存
-        unless @keyword_params == nil
-          RoomsKeywordsSearch.new(room_id: @room.id, keyword_id: @keyword_params.id).save
+        unless @keyword_params.nil?
+          RoomsKeywordsSearch.create(room_id: @room.id, keyword_id: @keyword_params.id)
         end
 
         format.html { redirect_to room_url(@room), notice: "ルーム登録を完了しました" }
