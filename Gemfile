@@ -35,6 +35,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
 gem 'rspec-rails'
+gem 'factory_bot_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
