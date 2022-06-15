@@ -1,14 +1,14 @@
 .top
   = render("shared/flash_message")
-  .first_view 
-    .first_view_search 
+  .first_view
+    .first_view_search
       p Potepan Shareでまだ体験したことのない旅をしよう
       p エリア検索
       =search_form_for @area, url: searches_area_rooms_path,method: "get",class: "first_view_search_area" do |f|
         =f.search_field :name_or_address_cont,:placeholder => "どこに行こう？"
         br
         =f.submit("探す")
- 
+
   .recommendation_area
     p おすすめのエリア
     .recommendation_area_search
@@ -17,7 +17,7 @@
         =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg",class: "recommendation_area_search_image"),"http://localhost:3000/rooms/searches/area?button=&q%5Bname_or_address_cont%5D=%E5%A4%A7%E9%98%AA"
         =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg",class: "recommendation_area_search_image"),"http://localhost:3000/rooms/searches/area?button=&q%5Bname_or_address_cont%5D=%E4%BA%AC%E9%83%BD"
         =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg",class: "recommendation_area_search_image"),"http://localhost:3000/rooms/searches/area?button=&q%5Bname_or_address_cont%5D=%E6%9C%AD%E5%B9%8C"
-      .recommendation_area_search_area_name 
+      .recommendation_area_search_area_name
         p 東京
         p 大阪
         p 京都

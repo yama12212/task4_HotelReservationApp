@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title 
+    title
       = full_title(yield(:title))
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
@@ -16,43 +16,43 @@ html
 body
   .screen_structure
     header
-      .header_search  
+      .header_search
         =link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", class: "header_logo"), "/"
         .header_search_box
           =search_form_for @area, url: searches_area_rooms_path,method: "get",class: "header_search_form" do |f|
-            =f.button :type=>"submit" do 
+            =f.button :type=>"submit" do
               i class="fas fa-map-marker-alt"
             =f.search_field :name_or_address_cont,:placeholder => "エリア名で検索"
-        
+
           =form_with url: searches_keyword_rooms_path,method: "get",class: "header_search_form" do |f|
-            =f.button :type=>"submit" do 
+            =f.button :type=>"submit" do
               i class="fas fa-search"
             =f.search_field :keyword,:placeholder => "キーワードで検索"
 
       -if user_signed_in?
         .header_user_info
-          p =current_user.name 
+          p =current_user.name
           input type="checkbox" id="user_menu"
           label for="user_menu"
             =image_tag "/user_images/#{current_user.image_name}"
-          .header_user_menu 
-              ul 
+          .header_user_menu
+              ul
                 li =link_to "ルーム登録", new_room_path
                 li =link_to "予約済みルーム一覧", reservation_path
                 li =link_to "登録済みルーム一覧", rooms_path
                 li =link_to "設定", user_path
                 li =link_to "ログアウト", destroy_user_session_path,method: :delete
-      -else    
-        .header_login 
+      -else
+        .header_login
           =link_to "ログイン", new_user_session_path
           =link_to "新規登録", new_user_registration_path
-    
 
-        
+
+
 
     main
       = yield
-      
+
     footer
       p © 2020 POTEPAN.INC.
 
