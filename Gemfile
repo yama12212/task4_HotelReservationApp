@@ -34,6 +34,7 @@ gem 'ransack'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
+gem 'bootstrap-sass'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 
