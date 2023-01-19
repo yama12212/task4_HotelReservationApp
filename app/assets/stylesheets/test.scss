@@ -1,0 +1,41 @@
+p {
+  margin: 0;
+}
+
+.c1 {
+  background-color: yellow;
+}
+.c2 {
+  background-color: yellowgreen;
+}
+.c3 {
+  background-color: blue;
+}
+.c4 {
+  background-color: red;
+}
+.c5 {
+  background-color: cyan;
+}
+.c6 {
+  background-color: orange;
+}
+.c7 {
+  background-color: brown;
+}
+.c8 {
+  background-color: magenta;
+}
+
+.user-thumbnail {
+  border-radius: 50%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .row {
+    background-color: green;
+  }
+
+}

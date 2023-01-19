@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/' => "homes#top"
+  get 'test' => "tests#index"
 
   resources :rooms do
     collection do

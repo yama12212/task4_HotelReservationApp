@@ -1,0 +1,50 @@
+= stylesheet_link_tag "test"
+
+.row.mt-2
+  .c1.col-md-4.p-2
+    p column1
+  .c2.col-md-2.col-6.p-2
+    p column2
+  .c3.col-md-2.col-6.p-2
+    p column3
+  .c4.col-md-4.p-2
+    p column4
+
+.row
+  .c5.col-2
+    p column5
+  .c6.col-10
+    .row
+      .c7.col-2
+        p column7
+      .c8.col-10
+        p column8
+
+img.img-fluid src="https://picsum.photos/1200/1200"
+img.user-thumbnail.img-thumbnail src="https://picsum.photos/100/100"
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
