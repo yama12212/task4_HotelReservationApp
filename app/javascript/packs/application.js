@@ -8,8 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 // bootstrap導入における記述
-import "bootstrap";
-import "../stylesheets/application.scss";
+import 'bootstrap';
+import '../stylesheets/application';
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 
 require('jquery')
 
