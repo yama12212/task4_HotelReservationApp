@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get '/' => "homes#top"
   get 'test' => "tests#index"
 
+  resources :show_pdf, only: :index
+
   resources :rooms do
     collection do
       get 'searches/area'

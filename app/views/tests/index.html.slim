@@ -123,3 +123,30 @@ a.btn.btn-outline-success リンク
 <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
 
 <i class="bi bi-badge-4k-fill"></i>
+
+= link_to "PDFを出力", show_pdf_index_path(format: "pdf")
+
+= form_with do |f|
+  = f.file_field :image
+
+p ボタンをクリック
+#edit_area
+  input type="button" value="Check" onclick="myfunc()"
+
+javascript:
+  var myfunc = function () {
+        // var text = ".innerHTMLで変数渡し！";
+        // document.getElementById("edit_area").textContent = text ;
+
+        // var str = "ページが開いたよ"
+        // document.open();
+        // document.write(str);
+        // document.close();
+
+        var id = document.getElementById("edit_area");
+
+        id.insertAdjacentHTML("afterBegin","<p>afterbeginの位置！</p>");
+        id.insertAdjacentHTML("beforeBegin","<p>beforebeginの位置！</p>");
+        id.insertAdjacentHTML("afterEnd","<p>afterendの位置！</p>");
+        id.insertAdjacentHTML("beforeEnd","<p>beforeendの位置！</p>");
+      }
