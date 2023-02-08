@@ -1,0 +1,60 @@
+h2 Google map
+p 現在地のgoogle mapのURL
+a id="google_map_URL" target="_blank"
+  | 現在地の情報が未取得です
+input id="button" type="button" value="位置情報を取得" onclick="replaceURL()"
+#map
+
+//これを省略してしまうと地図が表示されない
+sass:
+  //#map
+    height: 500px;
+    width: 500px;
+  input
+    outline: solid 1px black;
+  #button
+    outline: solid 0.1px black;
+    margin-left: 10px;
+
+javascript:
+  let map
+
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+
+    // 現在地を取得するためのコード（現在地の情報をLatLngに格納）
+    navigator.geolocation.getCurrentPosition(function (position) {
+      LatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      map = new google.maps.Map(document.getElementById('map'),{
+      //初期位置の緯度経度 lat（latitude）が緯度、lng（longitude）が経度
+        center: LatLng,
+      //表示領域の大きさ 数値は0〜21まで指定できる。数値が大きいほど拡大される
+        zoom: 12,
+      });
+
+      marker = new google.maps.Marker({
+      //positionに指定した座標にピンを挿す
+        position: LatLng,
+        map: map
+      });
+    });
+  };
+
+  function replaceURL() {
+    navigator.geolocation.getCurrentPosition(getCurrentLocation);
+  };
+
+  function getCurrentLocation(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+
+    let link = document.getElementById("google_map_URL");
+    let url = `https://maps.google.com/maps?q=${lat},${lng}`;
+
+    link.setAttribute('href', url);
+    link.innerText = url
+  };
+
+// key=　の後に、google map pratform で作成したAPIキーを入れるとgoogle mapが表示される
+javascript src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3YCA-AkondHHprgvDd-n42sUiVLf5s0s&callback=initMap" async defer:

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/' => "homes#top"
   get 'test' => "tests#index"
+  get 'map' => "maps#index"
 
   resources :show_pdf, only: :index
 
